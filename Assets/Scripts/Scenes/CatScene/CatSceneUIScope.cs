@@ -7,12 +7,8 @@ namespace Scenes.CatScene
 {
     public class CatSceneUIScope : LifetimeScope
     {
-        [Inject]
-        private CatSceneModel _catSceneModel;
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.RegisterInstance(_catSceneModel);
-            
             builder.Register<UIService>(Lifetime.Singleton);
             
             builder.RegisterComponentInHierarchy<SplashScreenScript>();

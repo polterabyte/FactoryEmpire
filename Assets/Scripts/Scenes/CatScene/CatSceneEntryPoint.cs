@@ -15,6 +15,9 @@ namespace Scenes.CatScene
         [Inject]
         private UserAuthorizationService _userAuthorizationService;
 
+        [Inject] 
+        private GameEntityDataBaseService _gameEntityDataBaseService;
+
         [Inject]
         private SceneLoaderService _sceneLoaderService;
 
@@ -32,12 +35,18 @@ namespace Scenes.CatScene
             
             if (_userAuthorizationService == null)
                 throw new Exception("userAuthorizationService is null");
+
+            _catSceneModel.InitializationProgress = 0.25f;
             
             Debug.Log("userAuthorizationService start loading");
-            _catSceneModel.InitializationProgress = 0.5f;
             await _userAuthorizationService.Connect();
-            _catSceneModel.InitializationProgress = 1;
             Debug.Log("userAuthorizationService loaded");
+
+            _catSceneModel.InitializationProgress = 0.5f;
+            
+            Debug.Log("gameEntityDataBaseService start loading");
+            await _gameEntityDataBaseService.Update();
+            Debug.Log("gameEntityDataBaseService loaded");
         }
     }
 }

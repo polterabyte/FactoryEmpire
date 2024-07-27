@@ -9,12 +9,9 @@ namespace Scenes.MainScene
 {
     public class MainSceneUIScope : LifetimeScope
     {
-        [Inject]
-        private ClickService _clickService;
+
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.RegisterInstance(_clickService);
-            
             builder.Register<UIService>(Lifetime.Singleton);
             
             builder.RegisterComponentInHierarchy<MainScreenScript>();

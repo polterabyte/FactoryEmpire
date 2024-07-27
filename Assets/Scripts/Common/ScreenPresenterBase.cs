@@ -13,12 +13,12 @@ namespace Common
             View = view;
         }
 
-        public void Show()
+        public virtual void Show()
         {
             View.gameObject.SetActive(true);
         }
 
-        public void Hide()
+        public virtual void Hide()
         {
             View.gameObject.SetActive(false);
         }

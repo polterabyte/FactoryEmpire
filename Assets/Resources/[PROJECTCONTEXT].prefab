@@ -48,3 +48,4 @@ MonoBehaviour:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
+  localResourcesDataBase: {fileID: 11400000, guid: 156259631bb81ed469339796957a457e, type: 2}

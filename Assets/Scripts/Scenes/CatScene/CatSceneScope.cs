@@ -4,7 +4,7 @@ using VContainer.Unity;
 
 namespace Scenes.CatScene
 {
-    public class CatSceneScope : GameLifetimeScope
+    public class CatSceneScope : LifetimeScope
     {
         protected override void Configure(IContainerBuilder builder)
         {

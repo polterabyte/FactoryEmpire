@@ -34,5 +34,13 @@ namespace Scenes.MainScene.UI
                 .AddTo(destroyToken)
                 ;
         }
+
+
+        public override void Show()
+        {
+            base.Show();
+            
+            _service.DebugPrint();
+        }
     }
 }
